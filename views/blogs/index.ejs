@@ -1,0 +1,24 @@
+<% include  ../partials/header%>
+<div class="container">
+    <div class="row">
+    	<%blogs.forEach(function(blog){ %>
+			<div>
+				<div class="blogTitle">
+					<h4><%=blog.title %></h4>
+				</div>
+				<div class="blogAuthor">
+					<h6><%=blog.author %></h6>
+				</div>
+				<div class="blogDate">
+					<h6><%=blog.date %></h6>
+				</div>
+				<div class="blogText">
+					<p><%=blog.text %></p>
+				</div>
+				
+
+			</div>
+    	<%}) %>
+    </div>
+</div>
+<% include  ../partials/footer%>
