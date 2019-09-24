@@ -1,19 +1,20 @@
 <% include  ../partials/header%>
 <div class="container">
+	<a href="/blogs/new" class="btn btn-primary">Add new</a>
     <div class="row">
-    	<%blogs.forEach(function(blog){ %>
+    	<%posts.forEach(function(post){ %>
 			<div>
 				<div class="blogTitle">
-					<h4><%=blog.title %></h4>
+					<h4><%=post.title %></h4>
 				</div>
 				<div class="blogAuthor">
-					<h6><%=blog.author %></h6>
+					<h6><%=post.author %></h6>
 				</div>
 				<div class="blogDate">
-					<h6><%=blog.date %></h6>
+					<h6><%=post.date %></h6>
 				</div>
 				<div class="blogText">
-					<p><%=blog.text %></p>
+					<p><%=post.text %></p>
 				</div>
 				
 
