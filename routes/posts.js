@@ -45,6 +45,21 @@ router.get("/new", function(req, res) {
     res.render("posts/new")
 })
 
+//SHOW ROUTES
+app.get("/:id", function(req, res){
+	//find the post with provided id
+	Post.findById(req.params.id).exec(function(err, foundPost){
+		if (err) {
+			console.log(err)
+		} else {
+			//render show template
+			res.render("posts/show", {post: foundPost})
+		}
+	})
+
+})
+
+
 //EDIT ROUTE
 
 
