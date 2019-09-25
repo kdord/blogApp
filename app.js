@@ -10,7 +10,7 @@ var express  		= require("express"),
 var postRoutes 		= require("./routes/posts.js")
 
 
-seedDB()
+// seedDB()
 
 mongoose.connect("mongodb://localhost/blog_app", { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
 app.use(bodyParser.urlencoded({extended:true}))
