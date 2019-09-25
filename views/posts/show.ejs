@@ -5,7 +5,10 @@
 		<h6><%= post.date.toDateString() %></h6>
 		<p><%= post.text %></p>
 
-		<a href="/post/<%=post._id%>/edit" class = "btn btn-info">Edit</a>
+		<a href="/posts/<%=post._id%>/edit" class = "btn btn-info">Edit</a>
+		<form action="/posts/<%= post._id %>?_method=DELETE" class="delete-form" method="POST">
+			<button class="btn btn-danger">Delete</button>
+		</form>
 	</div>	
 
 <% include  ../partials/footer%>
