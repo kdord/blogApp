@@ -7,10 +7,10 @@ var express  		= require("express"),
 	seedDB 			= require("./seeds.js")
 
 //require routes
-var blogRoutes 		= require("./routes/blogs.js")
+var postRoutes 		= require("./routes/posts.js")
 
 
-// seedDB()
+seedDB()
 
 mongoose.connect("mongodb://localhost/blog_app", { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
 app.use(bodyParser.urlencoded({extended:true}))
@@ -33,7 +33,7 @@ app.get("/", function(req, res){
 // })
 
 
-app.use("/blogs", blogRoutes)
+app.use("/posts", postRoutes)
 
 
 app.listen(3000, function(){

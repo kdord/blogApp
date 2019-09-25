@@ -10,7 +10,7 @@ router.get("/", function(req, res) {
         if (err) {
             console.log(err)
         } else {
-            res.render("blogs/index", { posts: allPosts })
+            res.render("posts/index", { posts: allPosts })
         }
     })
 
@@ -35,15 +35,21 @@ router.post("/", function(req, res){
 		if (err) {
 			console.log(err)
 		} else {
-			res.redirect("/blogs")
+			res.redirect("/posts")
 		}
 	} )
 })
 
 //NEW ROUTE
 router.get("/new", function(req, res) {
-    res.render("blogs/new")
+    res.render("posts/new")
 })
+
+//EDIT ROUTE
+
+
+//DESTROY ROUTE
+
 
 
 
