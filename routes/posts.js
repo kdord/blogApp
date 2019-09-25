@@ -46,7 +46,7 @@ router.get("/new", function(req, res) {
 })
 
 //SHOW ROUTES
-app.get("/:id", function(req, res){
+router.get("/:id", function(req, res){
 	//find the post with provided id
 	Post.findById(req.params.id).exec(function(err, foundPost){
 		if (err) {
@@ -61,10 +61,37 @@ app.get("/:id", function(req, res){
 
 
 //EDIT ROUTE
+router.get("/:id/edit", function(req, res){
+	Post.findById(req.params.id, function(err, foundPost){
+		res.render("posts/edit", {post: foundPost})
+	})
+})
+//UPDATE ROUTE
+
+router.put("/:id", function(req, res){
+	//find and update the correct post
+	Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
+		if (err) {
+			console.log(err)
+			res.redirect("/post")
+		} else {
+			res.redirect("/posts/" + req.params.id)
+		}
+	})
+})
 
 
 //DESTROY ROUTE
-
+router.delete("/:id", function(req, res){
+	Post.findByIdAndRemove(req.params.id, function(err){
+		if (err) {
+			console.log(err)
+			res.redirect("/posts")
+		} else {
+			res.redirect("/posts")
+		}
+	})
+})
 
 
 
