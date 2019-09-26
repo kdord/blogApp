@@ -4,19 +4,39 @@ var express  		= require("express"),
 	mongoose		= require("mongoose"),
 	methodOverride	= require("method-override"),
 	Post 			= require("./models/post.js"),
-	seedDB 			= require("./seeds.js")
+	seedDB 			= require("./seeds.js"),
+	passport 		= require("passport"),
+	LocalStrategy 	= require("passport-local"),
+	session 		= require("express-session"),
+	User 			= require("./models/user.js")
 
 //require routes
 var postRoutes 		= require("./routes/posts.js")
 
 
-// seedDB()
+// seedDB() //seed the database
 
 mongoose.connect("mongodb://localhost/blog_app", { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
+	.then(() => console.log("connection succesful"))
+	.catch((err) => console.error(err))
 app.use(bodyParser.urlencoded({extended:true}))
 app.set("view engine", "ejs")
 app.use(express.static(__dirname + "/public"))
 app.use(methodOverride("_method"))
+
+
+//PASSPORT CONFIG
+app.use(session({
+	secret: "secret text",
+	resave: false,
+	saveUninitialized: false
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
+passport.use(new LocalStrategy(User.authenticate()))
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
 
 
 
