@@ -12,6 +12,7 @@ var express  		= require("express"),
 
 //require routes
 var postRoutes 		= require("./routes/posts.js")
+var indexRoutes 	= require("./routes/index.js")
 
 
 // seedDB() //seed the database
@@ -38,12 +39,11 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
-
-
-
-app.get("/", function(req, res){
-	res.render("landing")
+app.use(function(req, res, next){
+	res.locals.currentUser = req.user
+	next()
 })
+
 
 
 // Post.create({
@@ -52,7 +52,7 @@ app.get("/", function(req, res){
 // 	text: "this is  first blog"
 // })
 
-
+app.use("/", indexRoutes)
 app.use("/posts", postRoutes)
 
 

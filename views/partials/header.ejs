@@ -15,10 +15,13 @@
 		</button>	
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 			<ul class="nav navbar-nav ">
-				<a class="nav-item nav-link" href="#">Login</a>
-				<a class="nav-item nav-link" href="#">SignUp</a>
-				<a class="nav-item nav-link" href="#">LogOut</a>
-					
+				<%if(!currentUser){%>
+				<a class="nav-item nav-link" href="/login">Login</a>
+				<a class="nav-item nav-link" href="/register">SignUp</a>
+				<%} else {%>
+				<a href="#">Signed In As <%=currentUser.username%></a>
+				<a class="nav-item nav-link" href="/logout">LogOut</a>
+				<%}%>	
 			</ul>
 		</div>
 		
