@@ -21,19 +21,19 @@ function seedDB(){
 	Post.deleteMany({}, function(err){
 		if(err){
 			console.log(err)
-		} else {
-			console.log("posts removed")
-			//add two new posts
-			data.forEach(function(seed){
-								Post.create(seed, function(err, post){
-					if (err) {
-						console.log(err)
-					} else{
-						console.log("added a post")
-					}
-				})
-			})
-		}
+		 } //else {
+		// 	console.log("posts removed")
+		// 	//add two new posts
+		// 	data.forEach(function(seed){
+		// 						Post.create(seed, function(err, post){
+		// 			if (err) {
+		// 				console.log(err)
+		// 			} else{
+		// 				console.log("added a post")
+		// 			}
+		// 		})
+		// 	})
+		// }
 	
 	})
 

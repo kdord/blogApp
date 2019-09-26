@@ -15,7 +15,7 @@ var postRoutes 		= require("./routes/posts.js")
 var indexRoutes 	= require("./routes/index.js")
 
 
-// seedDB() //seed the database
+seedDB() //seed the database
 
 mongoose.connect("mongodb://localhost/blog_app", { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
 	.then(() => console.log("connection succesful"))

@@ -21,7 +21,10 @@ router.get("/", function(req, res) {
 router.post("/", function(req, res){
 	//get data from forms and add 
 	var title = req.body.title
-	var author = req.body.author
+	var author = {
+		id:req.user._id,
+		username: req.user.username
+	}
 	var text = req.body.text
 
 	var newPost = {
