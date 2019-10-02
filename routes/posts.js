@@ -1,7 +1,7 @@
 var express = require("express")
 var router = express.Router()
 var Post = require("../models/post.js")
-
+var middlewareObj = require("../middleware/index.js")
 
 
 //INDEX ROUTE
@@ -18,7 +18,7 @@ router.get("/", function(req, res) {
 
 
 //CREATE ROUTE
-router.post("/", function(req, res){
+router.post("/", middlewareObj.isLoggedIn, function(req, res){
 	//get data from forms and add 
 	var title = req.body.title
 	var author = {
@@ -26,10 +26,12 @@ router.post("/", function(req, res){
 		username: req.user.username
 	}
 	var text = req.body.text
+	var isPrivate = req.body.inlineRadioOptions
 
 	var newPost = {
 		title: title,
 		author: author,
+		isPrivate: isPrivate,
 		text: text
 	}
 
@@ -44,14 +46,14 @@ router.post("/", function(req, res){
 })
 
 //NEW ROUTE
-router.get("/new", function(req, res) {
+router.get("/new",middlewareObj.isLoggedIn,  function(req, res) {
     res.render("posts/new")
 })
 
 //SHOW ROUTES
 router.get("/:id", function(req, res){
 	//find the post with provided id
-	Post.findById(req.params.id).exec(function(err, foundPost){
+	Post.findById(req.params.id).populate("comments").exec(function(err, foundPost){
 		if (err) {
 			console.log(err)
 		} else {
@@ -64,14 +66,14 @@ router.get("/:id", function(req, res){
 
 
 //EDIT ROUTE
-router.get("/:id/edit", function(req, res){
+router.get("/:id/edit", middlewareObj.chekPostOwnership ,function(req, res){
 	Post.findById(req.params.id, function(err, foundPost){
 		res.render("posts/edit", {post: foundPost})
 	})
 })
 //UPDATE ROUTE
 
-router.put("/:id", function(req, res){
+router.put("/:id",middlewareObj.chekPostOwnership , function(req, res){
 	//find and update the correct post
 	Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
 		if (err) {
@@ -85,7 +87,7 @@ router.put("/:id", function(req, res){
 
 
 //DESTROY ROUTE
-router.delete("/:id", function(req, res){
+router.delete("/:id",middlewareObj.chekPostOwnership , function(req, res){
 	Post.findByIdAndRemove(req.params.id, function(err){
 		if (err) {
 			console.log(err)

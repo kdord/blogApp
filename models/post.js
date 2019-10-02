@@ -10,10 +10,17 @@ var postSchema = new mongoose.Schema({
 		username: String
 	},
 	text: String,
+	isPrivate: Boolean,
 	date: {
 		type: Date,
 		default: Date.now
-	}
+	},
+	comments: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Comment"
+		}
+	]
 })
 
 

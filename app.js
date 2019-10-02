@@ -8,11 +8,13 @@ var express  		= require("express"),
 	passport 		= require("passport"),
 	LocalStrategy 	= require("passport-local"),
 	session 		= require("express-session"),
-	User 			= require("./models/user.js")
+	User 			= require("./models/user.js"),
+	Comment 		= require("./models/comment.js")
 
 //require routes
 var postRoutes 		= require("./routes/posts.js")
 var indexRoutes 	= require("./routes/index.js")
+var commentRoutes 	= require("./routes/comments.js")
 
 
 seedDB() //seed the database
@@ -54,6 +56,7 @@ app.use(function(req, res, next){
 
 app.use("/", indexRoutes)
 app.use("/posts", postRoutes)
+app.use("/posts/:id/comments", commentRoutes)
 
 
 app.listen(3000, function(){

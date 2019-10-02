@@ -1,5 +1,6 @@
 var mongoose = require("mongoose")
 var Post = require("./models/post.js")
+var Comment = require("./models/comment.js")
 
 var data = [
 	{
@@ -19,9 +20,9 @@ function seedDB(){
 
 	//remove all posts
 	Post.deleteMany({}, function(err){
-		if(err){
-			console.log(err)
-		 } //else {
+		// if(err){
+		// 	console.log(err)
+		//  } else {
 		// 	console.log("posts removed")
 		// 	//add two new posts
 		// 	data.forEach(function(seed){
@@ -30,6 +31,19 @@ function seedDB(){
 		// 				console.log(err)
 		// 			} else{
 		// 				console.log("added a post")
+		// 				Comment.create(
+		// 						{text: "comment1",
+		// 						 author:"Homer"	
+		// 						}, function (err, comment) {
+		// 							if (err) {
+		// 								console.log(err)
+		// 							} else {
+		// 								post.comments.push(comment)
+		// 								post.save()
+		// 								console.log('created a comment')
+		// 							}
+		// 						}
+		// 					)
 		// 			}
 		// 		})
 		// 	})

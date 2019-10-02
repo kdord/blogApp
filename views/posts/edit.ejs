@@ -13,7 +13,18 @@
 						<input class="form-control" type="text" name="post[text]" value="<%= post.text %>">
 					</div>
 					<button class="btn btn-primary">Submit!</button>
-					
+					<div class="isPrivate d-block">
+						<p>Is Private?</p>
+			            <div class="form-check form-check-inline form-check-isPrivate">
+			            	<input type="radio" class="form-check-input" name="inlineRadioOptions" value="true" id="isPrivateRadio1">
+			            	<label for="isPrivateRadio1" class="form-check-label">Yes</label>
+			            </div>
+			             <div class="form-check form-check-inline form-check-isPrivate">
+			            	<input type="radio" class="form-check-input" name="inlineRadioOptions" value="true" id="isPrivateRadio2" checked>
+			            	<label for="isPrivateRadio2" class="form-check-label">No</label>
+			            </div>
+			            
+					</div>
 				</form>
 			</div>
 			<div>
