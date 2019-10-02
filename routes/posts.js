@@ -6,7 +6,7 @@ var middlewareObj = require("../middleware/index.js")
 
 //INDEX ROUTE
 router.get("/", function(req, res) {
-    Post.find({}, function(err, allPosts) {
+    Post.find({"isPrivate" : false}, function(err, allPosts) {
         if (err) {
             console.log(err)
         } else {

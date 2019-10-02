@@ -2,6 +2,7 @@ var mongoose = require("mongoose")
 var passport = require("passport")
 var User 	 = require("../models/user.js")
 
+
 var userController = {}
 
 //Restrict access to root page
@@ -28,6 +29,7 @@ userController.doRegister = function(req, res){
 
 //Go to login page 
 userController.login = function(req, res){
+
 	res.render("login")
 }
 

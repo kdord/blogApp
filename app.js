@@ -15,9 +15,10 @@ var express  		= require("express"),
 var postRoutes 		= require("./routes/posts.js")
 var indexRoutes 	= require("./routes/index.js")
 var commentRoutes 	= require("./routes/comments.js")
+var userRoutes 		= require("./routes/user.js")
 
 
-seedDB() //seed the database
+// seedDB() //seed the database
 
 mongoose.connect("mongodb://localhost/blog_app", { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
 	.then(() => console.log("connection succesful"))
@@ -57,7 +58,7 @@ app.use(function(req, res, next){
 app.use("/", indexRoutes)
 app.use("/posts", postRoutes)
 app.use("/posts/:id/comments", commentRoutes)
-
+app.use(userRoutes)
 
 app.listen(3000, function(){
 	console.log("Server has started")

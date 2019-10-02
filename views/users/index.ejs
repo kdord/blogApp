@@ -1,0 +1,30 @@
+<% include  ../partials/header%>
+<div class="container">
+	<a href="/posts/new" class="btn btn-primary">Add new</a>
+    <div >
+
+    	<%posts.forEach(function(post){ %>
+			<div class="card">
+				<div class="card-body">
+					<div class="postTitle card-title">
+						<h4><%=post.title %></h4>
+					</div>
+					
+					<div class="postDate card-text">
+						<h6 class="text-muted"><small><%=post.date.toDateString() %></small></h6>
+					</div>
+					<div class="postAuthor card-text">
+						<h6 class="text-muted"><small><%=post.author.username %></small></h6>
+					</div>
+					<div class="postText card-text">
+						<p><%=post.text.substring(0, 200) %>...</p>
+					</div>
+					<a href="/posts/<%=post._id%>" class="btn btn-primary">Read More</a>
+
+				</div>
+
+			</div>
+    	<%}) %>
+    </div>
+</div>
+<% include  ../partials/footer%>
