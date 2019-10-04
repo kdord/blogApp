@@ -1,0 +1,58 @@
+body {
+	background-color: #000000;
+	font-family: 'Raleway', sans-serif;
+	color: #bfbfbf
+}
+
+#navbar {
+	background-color: #000000
+	color: #bfbfbf;
+}
+
+.landing-layer1  {
+	position: absolute;
+	background-image: url("https://images.unsplash.com/photo-1521811638546-64c3e3ece9d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80");
+	background-repeat: no-repeat;
+	height: 55vh;
+	overflow: none;
+	opacity: 0.5;
+
+
+}
+.landing-layer2 {
+	position: relative;
+	color: #ffffff;
+	opacity: 1;
+	padding-top: 100px;
+	height: 55vh;
+}
+.landing-layer2 h1 {
+	font-size: 3em;
+	margin-top: 30px;
+
+}
+
+.landing-layer2 a {
+	margin: 2%;
+	margin-top: : 7%;
+	background-color: #212121;
+	border-color: #212121;
+}
+.landing-layer2 a:hover {
+	background-color: #6b6b6b;
+	border-color: #6b6b6b;
+}
+
+.landind-logo p{
+	position: absolute;
+	font-weight: 200;
+	font-size: 1.5em;
+	text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(112, 112, 112, 0.15)
+
+}
+.landing-articles {
+	margin-top: 5%
+}
+.landing-articles img {
+	width: 10%;
+}
