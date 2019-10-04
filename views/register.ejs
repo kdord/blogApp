@@ -1,11 +1,25 @@
 <%include ./partials/header %>
 
-<h1>Register</h1>
-<form action="/register" method="POST">
+
+<!-- <form action="/register" method="POST">
 	<input type="text" name="username" placeholder="username">
 	<input type="password" name="password" placeholder="password">
 	<input type="submit" value="Submit!">
 
-</form>
+</form> -->
+
+<div class="container-fluid login-register-img-layer mt-5">
+		
+	</div >
+	<div class="login-register-form-group  form-group row d-flex justify-content-center">
+
+			<form action="/register" method="POST" class="col-4">
+				<h1 class="text-center">Register</h1>
+				<input class="form-control m-2"  type="text" name="username" placeholder="username">
+				<input class="form-control m-2" type="password" name="password" placeholder="password">
+				<button  class="form-control btn-dark m-2" type="submit" >Submit!</button> 
+			</form>
+	</div>
+
 
 <%include ./partials/footer %>

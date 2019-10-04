@@ -8,6 +8,9 @@ body {
 	background-color: #000000
 	color: #bfbfbf;
 }
+#navbar .navbar-brand img {
+	height: 25px
+}
 
 .landing-layer1  {
 	position: absolute;
@@ -62,3 +65,19 @@ body {
 	max-width: 450px;
 
 }
+
+.login-register-img-layer {
+	background-image: url(https://images.unsplash.com/photo-1521811638546-64c3e3ece9d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80);
+	position: absolute;
+	background-repeat: no-repeat;
+	height: 75vh;
+	opacity: 0.4;
+	overflow: none;
+
+}
+
+.login-register-form-group {
+	position: relative;
+	margin-top: 30vh
+}
+
