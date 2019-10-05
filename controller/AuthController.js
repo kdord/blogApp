@@ -20,9 +20,11 @@ userController.doRegister = function(req, res){
 	var newUser = new User({username: req.body.username})
 	User.register(newUser, req.body.password, function(err, user){
 		if (err) {
+			req.flash("error", err.message)
 			return res.render("register", {user:user})
 		}
 		passport.authenticate("local")(req, res, function(){
+			req.flash("success", "Welcome to Blog")
 			res.redirect("/posts")})
 	})
 }
@@ -36,6 +38,7 @@ userController.login = function(req, res){
 //Post login
 userController.doLogin = function(req, res){
 	passport.authenticate("local")(req, res, function(){
+		req.flash("success", "Welcome Back!")
 		res.redirect("/posts")
 	})
 }

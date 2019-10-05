@@ -28,6 +28,7 @@ router.post("/",middlewareObj.isLoggedIn , function (req, res) {
 		} else {
 			Comment.create(req.body.comment, function(err, comment){
 				if (err) {
+					req.flash("error", "Something went wrong:(")
 					console.log(err)
 				} else {
 					//add username and id to comment
@@ -37,6 +38,7 @@ router.post("/",middlewareObj.isLoggedIn , function (req, res) {
 					comment.save()
 					foundPost.comments.push(comment)
 					foundPost.save()
+					req.flash("success", "Successfully added comment")
 					res.redirect("/posts/"+foundPost._id)
 
 				}
@@ -54,6 +56,7 @@ router.get("/:comment_id/edit",middlewareObj.checkCommentOwnership , function (r
 			if (err) {
 				res.redirect("back")
 			} else {
+				
 				res.render("comments/edit", {post_id: req.params.id, comment: foundComment})
 			}
 		})
@@ -67,6 +70,7 @@ router.put("/:comment_id",middlewareObj.checkCommentOwnership , function (req, r
 		if (err) {
 			res.redirect("back")
 		} else {
+			req.flash("success", "Comment edited")
 			res.redirect("/posts/"+req.params.id)
 		}
 	} )
@@ -79,7 +83,7 @@ router.delete("/:comment_id",middlewareObj.checkCommentOwnership , function (req
 		if (err) {
 			res.redirect("back")
 		} else {
-		
+			req.flash("success", "Comment deleted")
 			res.redirect("/posts/"+req.params.id)
 		}
 	})

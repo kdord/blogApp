@@ -80,6 +80,7 @@ router.put("/:id",middlewareObj.chekPostOwnership , function(req, res){
 			console.log(err)
 			res.redirect("/post")
 		} else {
+			req.flash("success", "Post successfully edited")
 			res.redirect("/posts/" + req.params.id)
 		}
 	})
@@ -93,6 +94,7 @@ router.delete("/:id",middlewareObj.chekPostOwnership , function(req, res){
 			console.log(err)
 			res.redirect("/posts")
 		} else {
+			req.flash("success", "Post successfully deleted")
 			res.redirect("/posts")
 		}
 	})
