@@ -12,18 +12,35 @@
 
 	<nav id="navbar" class="navbar navbar-expand-sm navbar-dark">
 		<a href="/" class="navbar-brand"><img src="https://www.iconsdb.com/icons/preview/silver/home-7-xxl.png" alt=""></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
-		</button>	
+		</button>
+		<% if (currentUser) { %>
+				<div class="navbar">
+					<ul class="nav navbar-nav">
+						<a class="nav-item nav-link" href="/<%=currentUser._id%>/posts">My posts </a>
+					</ul>
+				</div>
+		<%}%>
+				
+				
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 			<ul class="nav navbar-nav ">
 				<%if(!currentUser){%>
 				<a class="nav-item nav-link" href="/login">Login</a>
 				<a class="nav-item nav-link" href="/register">SignUp</a>
 				<%} else {%>
-				<a class="nav-item nav-link" href="/<%=currentUser._id%>/posts">My posts </a>
-				<a class="nav-item nav-link" href="#">Signed In As <%=currentUser.username%></a>
-				<a class="nav-item nav-link" href="/logout">LogOut</a>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         			 <img id="userImg" src="https://www.iconsdb.com/icons/preview/silver/user-xxl.png" alt="">
+       				 </a>
+       				 <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdownMenuLink">
+       				 	<a class="dropdown-item" href="#">Signed In As <%=currentUser.username%></a>
+						<a class="dropdown-item" href="/logout">LogOut</a>
+       				 </div>
+				</li>
+				
 				<%}%>	
 			</ul>
 		</div>

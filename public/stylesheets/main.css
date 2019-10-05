@@ -80,4 +80,20 @@ body {
 	position: relative;
 	margin-top: 30vh
 }
+.addNewButton {
+	background-color: #121010;
+	border-color: #121010;
+}
 
+.postCard {
+	background-color: #121010;
+}
+
+.btn-readMore {
+	background-color: #212121;
+	border-color: #212121;
+}
+
+#userImg {
+	height: 25px;
+}
