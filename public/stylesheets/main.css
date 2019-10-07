@@ -3,6 +3,28 @@ body {
 	font-family: 'Raleway', sans-serif;
 	color: #bfbfbf
 }
+#container-background {
+	position: absolute;
+	background-image: url("https://images.unsplash.com/photo-1570457975784-0246865facd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"); 
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	
+}
+.container{
+	position: relative;
+
+}
+
+
+hr {
+	border: 0;
+  	clear:both;
+  	display:block;
+	background-color:#909090;
+  	height: 1px;
+}
 
 #navbar {
 	background-color: #000000
@@ -66,6 +88,7 @@ body {
 
 }
 
+
 .login-register-img-layer {
 	background-image: url(https://images.unsplash.com/photo-1521811638546-64c3e3ece9d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80);
 	position: absolute;
@@ -83,6 +106,7 @@ body {
 .addNewButton {
 	background-color: #121010;
 	border-color: #121010;
+
 }
 
 .postCard {
@@ -96,4 +120,45 @@ body {
 
 #userImg {
 	height: 25px;
+}
+
+.btn-delete-edit-add  {
+	background-color: #121010;
+	border-color: #121010;
+	color: #ffffff
+}
+.post-show-title {
+	font-size: 2.6em;
+	text-align: center;
+}
+
+.show-date-isPrivate-line {
+
+}
+.post-show-text {
+	text-align: justify;
+}
+
+.form-control {
+	background-color: #121010;
+	color: #bfbfbf;
+}
+.form-control:focus {
+	background-color: #121010;
+	color: #bfbfbf;
+}
+.isPrivate p {
+	margin: 0;
+}
+.isPrivate {
+	font-size: 1.1em;
+	margin: 20px 0;
+}
+
+.submit-goBack-button .btn{
+	font-size: 1.2em;
+	background-color: #121010;
+	border-color: #121010; 
+	color: #bfbfbf;
+	margin-right: 10px;
 }

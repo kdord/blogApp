@@ -1,24 +1,29 @@
 <% include  ../partials/header%>
 	
 	<div class="container">
-		<h2><%= post.title %></h2>
-		<h6><%= post.date.toDateString() %></h6>
-		<%if(post.isPrivate){%>
-			<h6>Private</h6>
-		<%} else {%>
-			<h6>Public</h6>
-		<%}%>
-		<p><%= post.text %></p>
+		<h2 class="post-show-title"><%= post.title %></h2>
+		
+		<p class="post-show-text"><%= post.text %></p>
+		<div class="show-date-isPrivate-line d-flex justify-content-between my-2">
+			<span><%= post.date.toDateString() %></span>
+			<%if(post.isPrivate){%>
+				<span>Private</span>
+			<%} else {%>
+				<span>Public</span>
+			<%}%>
+		</div>
 		<p>
 			<em>Submitted By <%= post.author.username%></em>
 		</p>
-		<a href="/posts/<%=post._id%>/edit" class = "btn btn-info">Edit</a>
-		<form action="/posts/<%= post._id %>?_method=DELETE" class="delete-form" method="POST">
-			<button class="btn btn-danger">Delete</button>
-		</form>
+		<div>
+			<a href="/posts/<%=post._id%>/edit" class = "btn btn-block  btn-delete-edit-add">Edit</a>
+			<form action="/posts/<%= post._id %>?_method=DELETE" class="delete-form" method="POST">
+				<button class="btn btn-block btn-delete-edit-add my-2">Delete</button>
+			</form>
+		</div>
 		<hr>
 		<div class="comments">
-			<a class="btn btn-primary" href="/posts/<%=post._id%>/comments/new">Add New Comment</a>
+			<a class="btn btn-block btn-delete-edit-add" href="/posts/<%=post._id%>/comments/new">Add New Comment</a>
 			<%post.comments.forEach(function (comment) {%>
 				<div class="row">
 					<div class="col-md-12">
@@ -28,11 +33,13 @@
 						<p>
 							<%=comment.text%>
 						</p>
+						<div class="d-flex flex-row">
+							<a href="/posts/<%=post._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-warning">Edit</a>
+							<form class="delete-form" action="/posts/<%=post._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST" >
+								<button class="btn btn-xs btn-danger">Delete</button>
+							</form>
+						</div>
 						
-						<a href="/posts/<%=post._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-warning">Edit</a>
-						<form class="delete-form" action="/posts/<%=post._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST" >
-							<button class="btn btn-xs btn-danger">Delete</button>
-						</form>
 
 					</div>
 				</div>

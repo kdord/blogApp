@@ -1,25 +1,25 @@
 <% include  ../partials/header%>
 <div class="container">
-	<a href="/posts/new" class="btn btn-primary">Add new</a>
+	<a href="/posts/new" class="btn btn-dark addNewButton d-flex justify-content-center my-3">Add new</a>
     <div >
 
     	<%posts.forEach(function(post){ %>
-			<div class="card">
+			<div class="card postCard my-3">
 				<div class="card-body">
 					<div class="postTitle card-title">
 						<h4><%=post.title %></h4>
 					</div>
 					
 					<div class="postDate card-text">
-						<h6 class="text-muted"><small><%=post.date.toDateString() %></small></h6>
+						<h6 class="text-muted my-0"><small><%=post.date.toDateString() %></small></h6>
 					</div>
 					<div class="postAuthor card-text">
 						<h6 class="text-muted"><small><%=post.author.username %></small></h6>
 					</div>
 					<div class="postText card-text">
-						<p><%=post.text.substring(0, 200) %>...</p>
+						<p><%=post.text.substring(0, 1000) %>...</p>
 					</div>
-					<a href="/posts/<%=post._id%>" class="btn btn-primary">Read More</a>
+					<a href="/posts/<%=post._id%>" class="btn btn-dark btn-readMore">Read More</a>
 
 				</div>
 

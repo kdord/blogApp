@@ -12,7 +12,8 @@
             
          
             <div class="form-group">
-                <input class="form-control" type="text" name="text" placeholder="enter your text">
+                <textarea class="form-control" name="text" id="" cols="30" rows="25" placeholder="enter your text"></textarea>
+               
             </div>
 			<div class="isPrivate d-block">
 				<p>Is Private?</p>
@@ -26,11 +27,12 @@
 	            </div>
 	            
 			</div>
-            <button class="btn btn-primary">Submit!</button>
+            <div class="d-flex flex-row justify-content-between submit-goBack-button">
+                 <a href="/posts" class="btn">Go Back</a>
+                <button class="btn ">Submit!</button>
+            </div>
         </form>
     </div>
-    <div>
-        <a href="/posts">Go Back</a>
-    </div>
+    
 </div>
 <%include ../partials/footer %>
