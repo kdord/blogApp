@@ -1,7 +1,7 @@
 <% include  ../partials/header%>
 <div class="container">
-	<a href="/posts/new"  class="btn btn-dark addNewButton d-flex justify-content-center my-3">Add new</a>
-    <div >
+	<a href="/posts/new"  class="btn btn-dark addNewButton d-flex  justify-content-center my-3">Add new</a>
+    <div class="d-flex flex-column-reverse">
 
     	<%posts.forEach(function(post){ %>
 			<div class="card postCard my-3" >
@@ -17,7 +17,7 @@
 						<h6 class="text-muted"><small><%=post.author.username %></small></h6>
 					</div>
 					<div class="postText card-text">
-						<p><%=post.text.substring(0, 1000) %>...</p>
+						<p><%-post.text.substring(0, 1000) %>...</p>
 					</div>
 					<a href="/posts/<%=post._id%>" class="btn btn-dark btn-readMore" >Read More</a>
 

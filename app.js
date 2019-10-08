@@ -31,6 +31,7 @@ app.use(methodOverride("_method"))
 app.use(flash()) //for flash messages
 
 
+
 //PASSPORT CONFIG
 app.use(session({
 	secret: "secret text",
@@ -50,6 +51,7 @@ app.use(function(req, res, next){
 	res.locals.success = req.flash("success")
 	next()
 })
+
 
 
 
