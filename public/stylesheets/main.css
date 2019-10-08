@@ -16,6 +16,9 @@ body {
 	position: relative;
 
 }
+.container-fluid {
+	height: 100%;
+}
 
 
 hr {
@@ -32,6 +35,9 @@ hr {
 }
 #navbar .navbar-brand img {
 	height: 25px
+}
+.navbar-dark .navbar-nav .nav-link {
+	color: rgba(255, 255, 255, 0.6);
 }
 
 .landing-layer1  {
@@ -104,18 +110,18 @@ hr {
 	margin-top: 30vh
 }
 .addNewButton {
-	background-color: #121010;
-	border-color: #121010;
+	background-color: #060606a1;
+	border-color: #060606a1;
 
 }
 
 .postCard {
-	background-color: #121010;
+	background-color: #060606a1;
 }
 
 .btn-readMore {
-	background-color: #212121;
-	border-color: #212121;
+	background-color: #31313191;
+	border-color: #31313191;
 }
 
 #userImg {
@@ -123,8 +129,8 @@ hr {
 }
 
 .btn-delete-edit-add  {
-	background-color: #121010;
-	border-color: #121010;
+	background-color: #060606a1;
+	border-color: #060606a1;
 	color: #ffffff
 }
 .post-show-title {
@@ -137,6 +143,9 @@ hr {
 }
 .post-show-text {
 	text-align: justify;
+}
+#post-show {
+	background-color: #060606a1;
 }
 
 .form-control {
