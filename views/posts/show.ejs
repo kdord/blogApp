@@ -6,8 +6,8 @@
 			<h2 class="post-show-title"><%= post.title %></h2>
 			
 			<p class="post-show-text"><%- post.text %></p>
-			<div class="show-date-isPrivate-line d-flex justify-content-between my-2">
-				<span><%= post.date.toDateString() %></span>
+			<div class="show-date-isPrivate-line my-2">
+				<span><%= post.date.toDateString() %> </span>
 				<%if(post.isPrivate){%>
 					<span>Private</span>
 				<%} else {%>
@@ -36,7 +36,7 @@
 						<p>
 							<%=comment.text%>
 						</p>
-						<div class="d-flex flex-row">
+						<div class="post-show-editDelete-btn ">
 							<a href="/posts/<%=post._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-warning">Edit</a>
 							<form class="delete-form" action="/posts/<%=post._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST" >
 								<button class="btn btn-xs btn-danger">Delete</button>

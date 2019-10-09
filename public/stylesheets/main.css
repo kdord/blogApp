@@ -1,174 +1,255 @@
-body {
-	background-color: #000000;
-	font-family: 'Raleway', sans-serif;
-	color: #bfbfbf
-}
-#container-background {
-	position: absolute;
-	background-image: url("https://images.unsplash.com/photo-1570457975784-0246865facd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"); 
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat:no-repeat;
-	background-size: cover;
-	
-}
-.container{
-	position: relative;
+body
+{
+    font-family: 'Raleway', sans-serif;
 
-}
-.container-fluid {
-	height: 100%;
+    color: #bfbfbf;
+    background-color: #000;
 }
 
+#container-background
+{
+    position: absolute;
 
-hr {
-	border: 0;
-  	clear:both;
-  	display:block;
-	background-color:#909090;
-  	height: 1px;
-}
+    overflow: auto;
 
-#navbar {
-	background-color: #000000
-	color: #bfbfbf;
-}
-#navbar .navbar-brand img {
-	height: 25px
-}
-.navbar-dark .navbar-nav .nav-link {
-	color: rgba(255, 255, 255, 0.6);
+    height: 100vh;
+
+    background-image: url('https://images.unsplash.com/photo-1570457975784-0246865facd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
-.landing-layer1  {
-	position: absolute;
-	background-image: url("https://images.unsplash.com/photo-1521811638546-64c3e3ece9d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80");
-	background-repeat: no-repeat;
-	height: 55vh;
-	overflow: none;
-	opacity: 0.5;
-
-
-}
-.landing-layer2 {
-	position: relative;
-	color: #ffffff;
-	opacity: 1;
-	padding-top: 100px;
-	height: 55vh;
-}
-.landing-layer2 h1 {
-	font-size: 3em;
-	margin-top: 30px;
-
-}
-
-.landing-layer2 a {
-	margin: 2%;
-	margin-top: : 7%;
-	background-color: #212121;
-	border-color: #212121;
-}
-.landing-layer2 a:hover {
-	background-color: #6b6b6b;
-	border-color: #6b6b6b;
-}
-
-.landind-logo p{
-	position: absolute;
-	font-weight: 200;
-	font-size: 1.3em;
-	text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.1), 2px 2px 3px rgba(112, 112, 112, 0.15)
-
-}
-.landing-articles .landing-articles-item {
-	margin-top: 35px;
-	text-align: justify;
-}
-.landing-articles img {
-	width: 60px;
-}
-
-.landing-articles .landing-articles-item p {
-	max-width: 450px;
-
+.container
+{
+    position: relative;
 }
 
 
-.login-register-img-layer {
-	background-image: url(https://images.unsplash.com/photo-1521811638546-64c3e3ece9d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80);
-	position: absolute;
-	background-repeat: no-repeat;
-	height: 75vh;
-	opacity: 0.4;
-	overflow: none;
 
-}
+hr
+{
+    display: block;
+    clear: both;
 
-.login-register-form-group {
-	position: relative;
-	margin-top: 30vh
-}
-.addNewButton {
-	background-color: #060606a1;
-	border-color: #060606a1;
+    height: 1px;
 
+    border: 0;
+    background-color: #909090;
 }
 
-.postCard {
-	background-color: #060606a1;
+#navbar
+{
+    color: #bfbfbf;
+    background-color: #000;
 }
 
-.btn-readMore {
-	background-color: #31313191;
-	border-color: #31313191;
+#navbar .navbar-brand img
+{
+    height: 25px;
 }
 
-#userImg {
-	height: 25px;
+.navbar-dark .navbar-nav .nav-link
+{
+    color: rgba(255, 255, 255, .6);
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+	color: rgba(255, 255, 255);
 }
 
-.btn-delete-edit-add  {
-	background-color: #060606a1;
-	border-color: #060606a1;
-	color: #ffffff
-}
-.post-show-title {
-	font-size: 2.6em;
-	text-align: center;
+.landing-layer1
+{
+    position: absolute;
+
+    overflow: none;
+
+    height: 55vh;
+
+    opacity: .5;
+    background-image: url('https://images.unsplash.com/photo-1521811638546-64c3e3ece9d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80');
+    background-repeat: no-repeat;
 }
 
-.show-date-isPrivate-line {
+.landing-layer2
+{
+    position: relative;
 
-}
-.post-show-text {
-	text-align: justify;
-}
-#post-show {
-	background-color: #060606a1;
-}
+    height: 55vh;
+    padding-top: 100px;
 
-.form-control {
-	background-color: #121010;
-	color: #bfbfbf;
-}
-.form-control:focus {
-	background-color: #121010;
-	color: #bfbfbf;
-}
-.isPrivate p {
-	margin: 0;
-}
-.isPrivate {
-	font-size: 1.1em;
-	margin: 20px 0;
+    opacity: 1;
+    color: #fff;
 }
 
-.submit-goBack-button .btn{
-	font-size: 1.2em;
-	background-color: #121010;
-	border-color: #121010; 
-	color: #bfbfbf;
-	margin-right: 10px;
+.landing-layer2 h1
+{
+    font-size: 3em;
+
+    margin-top: 30px;
 }
 
+.landing-layer2 a
+{
+    margin: 2%;
+    margin-top: : 7%;
+
+    border-color: #212121;
+    background-color: #212121;
+}
+
+.landing-layer2 a:hover
+{
+    border-color: #6b6b6b;
+    background-color: #6b6b6b;
+}
+
+.landind-logo p
+{
+    font-size: 1.3em;
+    font-weight: 200;
+
+    position: absolute;
+
+    text-shadow: 3px 3px 6px rgba(255, 255, 255, .1), 2px 2px 3px rgba(112, 112, 112, .15);
+}
+
+.landing-articles .landing-articles-item
+{
+    margin-top: 35px;
+
+    text-align: justify;
+}
+
+.landing-articles img
+{
+    width: 60px;
+}
+
+.landing-articles .landing-articles-item p
+{
+    max-width: 450px;
+}
+
+
+.login-register-img-layer
+{
+    position: absolute;
+
+    overflow: none;
+
+    height: 75vh;
+
+    opacity: .4;
+    background-image: url(https://images.unsplash.com/photo-1521811638546-64c3e3ece9d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80);
+    background-repeat: no-repeat;
+}
+
+.login-register-form-group
+{
+    position: relative;
+
+    margin-top: 30vh;
+}
+
+.addNewButton
+{
+    border-color: #060606d1;
+    background-color: #060606d1;
+}
+
+.postCard
+{
+    background-color: #060606d1;
+}
+
+.btn-readMore
+{
+    border-color: #101010c4;
+    background-color: #101010c4;
+}
+.btn-readMore:hover {
+	background-color: #333333d1;
+	color: #fff;
+}
+
+#userImg
+{
+    height: 25px;
+}
+
+.btn-delete-edit-add
+{
+    color: #fff;
+    border-color: #060606d1;
+    background-color: #060606d1;
+}
+.btn-delete-edit-add:hover{
+	background-color: #333333d1;
+	border-color: #333333d1;
+	color: #fff;
+}
+
+.post-show-title
+{
+    font-size: 2.6em;
+
+    text-align: center;
+}
+
+
+.post-show-text
+{
+    text-align: justify;
+}
+
+#post-show
+{
+    background-color: #060606d1;
+}
+
+.form-control
+{
+    color: #bfbfbf;
+    background-color: #121010;
+}
+
+.form-control:focus
+{
+    color: #bfbfbf;
+    background-color: #121010;
+}
+
+.isPrivate p
+{
+    margin: 0;
+}
+
+.isPrivate
+{
+    font-size: 1.1em;
+
+    margin: 20px 0;
+}
+
+.submit-goBack-button .btn
+{
+    font-size: 1.2em;
+
+    margin-right: 10px;
+
+    color: #bfbfbf;
+    border-color: #121010;
+    background-color: #121010;
+}
+.show-date-isPrivate-line
+{
+    display: flex;
+
+    justify-content: space-between;
+}
+.post-show-editDelete-btn
+{
+    display: flex;
+    flex-direction: row;
+}
