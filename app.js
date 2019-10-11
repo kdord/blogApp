@@ -18,10 +18,13 @@ var indexRoutes 	= require("./routes/index.js")
 var commentRoutes 	= require("./routes/comments.js")
 var userRoutes 		= require("./routes/user.js")
 
+const log = require('simple-node-logger').createSimpleFileLogger('project.log');
+
+
 var DBPASS = process.env.DBPASS 
 var DBUSERNAME = process.env.DBUSERNAME
 // seedDB() //seed the database
-console.log(process.env)
+log.info(process.env.DBPASS)
 // console.log(DBUSERNAME)
 
 mongoose.connect(`mongodb+srv://${DBUSERNAME}:${DBPASS})@cluster0-lwmoa.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
@@ -32,6 +35,7 @@ app.set("view engine", "ejs")
 app.use(express.static(__dirname + "/public"))
 app.use(methodOverride("_method"))
 app.use(flash()) //for flash messages
+
 
 
 
