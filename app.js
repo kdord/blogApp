@@ -27,7 +27,7 @@ var userRoutes 		= require("./routes/user.js")
 // log.info(process.env.DBPASS)
 // console.log(DBUSERNAME)
 
-mongoose.connect(`mongodb+srv://${DBUSERNAME}:${DBPASS})@cluster0-lwmoa.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://${process.env.DBUSERNAME}:${process.env.DBPASS})@cluster0-lwmoa.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
 	.then(() => console.log("connection succesful"))
 	.catch((err) => console.error(err))
 app.use(bodyParser.urlencoded({extended:true}))
