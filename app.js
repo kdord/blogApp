@@ -18,10 +18,11 @@ var indexRoutes 	= require("./routes/index.js")
 var commentRoutes 	= require("./routes/comments.js")
 var userRoutes 		= require("./routes/user.js")
 
-
+var DBPASS = process.env.DBPASS 
+var DBUSERNAME = process.env.DBUSERNAME
 // seedDB() //seed the database
 
-mongoose.connect("mongodb://localhost/blog_app", { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://${DBUSERNAME}:${DBPASS})@cluster0-lwmoa.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
 	.then(() => console.log("connection succesful"))
 	.catch((err) => console.error(err))
 app.use(bodyParser.urlencoded({extended:true}))
