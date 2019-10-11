@@ -1,15 +1,20 @@
 <%include ./partials/headerWithoutBackground %>
-	<div class="container-fluid login-register-img-layer mt-5">
+
+
+
+	<div class="container-fluid login-register-container ">
 		
-	</div >
-	<div class="login-register-form-group  form-group row d-flex justify-content-center">
-			<form action="/login" method="POST" class="col-4">
-				<h1 class="text-center">Login</h1>
+		<div class="login-register-form-group  form-group row d-flex justify-content-center">
+			<h1 class="text-center">Login</h1>
+			<form action="/login" method="POST" class="col-10 col-md-6 col-lg-4">
+				
 				<input class="form-control m-2"  type="text" name="username" placeholder="username">
 				<input class="form-control m-2" type="password" name="password" placeholder="password">
 				<button  class="form-control btn-dark m-2" type="submit" >OK</button> 
 			</form>
 	</div>
+	</div >
+	
 	
 	
 

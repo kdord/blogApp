@@ -126,24 +126,28 @@ hr
 }
 
 
-.login-register-img-layer
+.login-register-container
 {
-    position: absolute;
+   overflow: auto;
 
-    overflow: none;
+    height:100vh;
 
-    height: 75vh;
-
-    opacity: .4;
-    background-image: url(https://images.unsplash.com/photo-1521811638546-64c3e3ece9d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80);
+    background-image: url('https://images.unsplash.com/photo-1570457975784-0246865facd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80');
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+}
+.login-register-container h1{
+	margin-top: 8vh;
+	margin-bottom: 3vh;
+	font-size: 3em;
 }
 
 .login-register-form-group
 {
-    position: relative;
-
-    margin-top: 30vh;
+    margin-top: 15vh;
 }
 
 .addNewButton
