@@ -33,14 +33,11 @@
 				
 				
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-			<div class="navbar d-flex d-md-none pb-0 ">
-					<ul class="nav navbar-nav">
-						<a class="nav-item nav-link" href="/posts">Public Posts</a>
-					</ul>
-			</div>
+			
 			<% if (currentUser) { %>
 					<div class="navbar d-flex d-md-none pt-0">
 						<ul class="nav navbar-nav">
+							<a class="nav-item nav-link" href="/posts">Public Posts</a>
 							<a class="nav-item nav-link" href="/<%=currentUser._id%>/posts">My posts </a>
 							<a class="nav-item nav-link" href="#">Signed In As <%=currentUser.username%></a>
 						<a class="nav-item nav-link" href="/logout">LogOut</a>
@@ -49,6 +46,7 @@
 			<%}%>
 			<ul class="nav navbar-nav ">
 				<%if(!currentUser){%>
+				<a class="nav-item nav-link d-md-none" href="/posts">Public Posts</a>
 				<a class="nav-item nav-link" href="/login">Login</a>
 				<a class="nav-item nav-link" href="/register">SignUp</a>
 				<%} else {%>

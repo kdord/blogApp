@@ -24,7 +24,7 @@ const DBURL = process.env.DBURL
 // seedDB() //seed the database
 
 
-mongoose.connect(DBURL, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
+mongoose.connect(localMongo, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
 	.then(() => console.log("connection succesful"))
 	.catch((err) => console.error(err))
 app.use(bodyParser.urlencoded({extended:true}))
@@ -62,6 +62,6 @@ app.use("/posts", postRoutes)
 app.use("/posts/:id/comments", commentRoutes)
 app.use(userRoutes)
 
-app.listen(process.env.PORT, function(){
+app.listen(3000, function(){
 	console.log("Server has started")
 })
