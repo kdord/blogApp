@@ -18,13 +18,13 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="navbar">
+		<div class="navbar d-none d-md-flex">
 					<ul class="nav navbar-nav">
 						<a class="nav-item nav-link" href="/posts">Public Posts</a>
 					</ul>
-			</div>
+		</div>
 		<% if (currentUser) { %>
-				<div class="navbar">
+				<div class="navbar d-none d-md-flex">
 					<ul class="nav navbar-nav">
 						<a class="nav-item nav-link" href="/<%=currentUser._id%>/posts">My posts </a>
 					</ul>
@@ -33,15 +33,31 @@
 				
 				
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+			<div class="navbar d-flex d-md-none pb-0">
+					<ul class="nav navbar-nav">
+						<a class="nav-item nav-link" href="/posts">Public Posts</a>
+					</ul>
+			</div>
+			<% if (currentUser) { %>
+					<div class="navbar d-flex d-md-none pt-0">
+						<ul class="nav navbar-nav">
+							<a class="nav-item nav-link" href="/<%=currentUser._id%>/posts">My posts </a>
+							<a class="nav-item nav-link" href="#">Signed In As <%=currentUser.username%></a>
+						<a class="nav-item nav-link" href="/logout">LogOut</a>
+						</ul>
+					</div>
+			<%}%>
 			<ul class="nav navbar-nav ">
 				<%if(!currentUser){%>
 				<a class="nav-item nav-link" href="/login">Login</a>
 				<a class="nav-item nav-link" href="/register">SignUp</a>
 				<%} else {%>
-
-				<li class="nav-item dropdown">
+				<!-- <div class="navbar d-flex d-md-none ">
+       				
+       			</div> -->
+				<li class="nav-item dropdown d-none d-md-flex">
 					<a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         			 <img id="userImg" src="https://www.iconsdb.com/icons/preview/silver/user-xxl.png" alt="">
+         			 <img id="userImg" src="https://www.iconsdb.com/icons/preview/silver/user-xxl.png" alt="" >
        				 </a>
        				 <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdownMenuLink">
        				 	<a class="dropdown-item" href="#">Signed In As <%=currentUser.username%></a>
