@@ -21,6 +21,8 @@ var userRoutes 		= require("./routes/user.js")
 var DBPASS = process.env.DBPASS 
 var DBUSERNAME = process.env.DBUSERNAME
 // seedDB() //seed the database
+console.log(process.env)
+// console.log(DBUSERNAME)
 
 mongoose.connect(`mongodb+srv://${DBUSERNAME}:${DBPASS})@cluster0-lwmoa.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
 	.then(() => console.log("connection succesful"))
@@ -67,6 +69,6 @@ app.use("/posts", postRoutes)
 app.use("/posts/:id/comments", commentRoutes)
 app.use(userRoutes)
 
-app.listen(3000, function(){
+app.listen(process.env.PORT, function(){
 	console.log("Server has started")
 })
