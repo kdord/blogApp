@@ -58,47 +58,41 @@ hr
 	color: rgba(255, 255, 255);
 }
 
-.landing-layer1
+#landing-layer
 {
-    position: absolute;
+    /* position: absolute; */
 
-    overflow: none;
+    overflow: auto;
 
     height: 55vh;
 
-    opacity: .5;
-    background-image: url('https://images.unsplash.com/photo-1521811638546-64c3e3ece9d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80');
+    background-image: url('https://images.unsplash.com/photo-1570457975784-0246865facd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80');
     background-repeat: no-repeat;
-}
-
-.landing-layer2
-{
-    position: relative;
-
-    height: 55vh;
-    padding-top: 100px;
-
-    opacity: 1;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     color: #fff;
 }
 
-.landing-layer2 h1
+
+
+#landing-layer h1
 {
     font-size: 3em;
 
     margin-top: 30px;
 }
 
-.landing-layer2 a
+#landing-layer a
 {
     margin: 2%;
-    margin-top: : 7%;
+    margin-top: : 3%;
 
     border-color: #212121;
     background-color: #212121;
 }
 
-.landing-layer2 a:hover
+#landing-layer a:hover
 {
     border-color: #6b6b6b;
     background-color: #6b6b6b;

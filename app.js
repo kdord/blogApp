@@ -18,16 +18,13 @@ var indexRoutes 	= require("./routes/index.js")
 var commentRoutes 	= require("./routes/comments.js")
 var userRoutes 		= require("./routes/user.js")
 
-// const log = require('simple-node-logger').createSimpleFileLogger('project.log');
 
-
-// var DBPASS = process.env.DBPASS 
-// var DBUSERNAME = process.env.DBUSERNAME
+const localMongo = "mongodb://localhost/blog_app"
+const DBURL = process.env.DBURL
 // seedDB() //seed the database
-// log.info(process.env.DBPASS)
-// console.log(DBUSERNAME)
 
-mongoose.connect(process.env.DBURL, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
+
+mongoose.connect(localMongo, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
 	.then(() => console.log("connection succesful"))
 	.catch((err) => console.error(err))
 app.use(bodyParser.urlencoded({extended:true}))
@@ -60,19 +57,11 @@ app.use(function(req, res, next){
 })
 
 
-
-
-// Post.create({
-// 	title: "Post 1",
-// 	author: "kateryna",
-// 	text: "this is  first blog"
-// })
-
 app.use("/", indexRoutes)
 app.use("/posts", postRoutes)
 app.use("/posts/:id/comments", commentRoutes)
 app.use(userRoutes)
 
-app.listen(process.env.PORT, function(){
+app.listen(3000, function(){
 	console.log("Server has started")
 })
