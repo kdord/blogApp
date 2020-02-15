@@ -18,8 +18,10 @@ var indexRoutes = require('./routes/index.js');
 var commentRoutes = require('./routes/comments.js');
 var userRoutes = require('./routes/user.js');
 
-const localMongo = 'mongodb://localhost/blog_app';
-const DBURL = process.env.DBURL;
+require('dotenv').config();
+
+const DBURL = process.env.DBURL || 'mongodb://localhost/blog_app';
+const PORT = process.env.PORT || 3000;
 // seedDB() //seed the database
 
 mongoose
@@ -63,6 +65,6 @@ app.use('/posts', postRoutes);
 app.use('/posts/:id/comments', commentRoutes);
 app.use(userRoutes);
 
-app.listen(process.env.PORT, function() {
+app.listen(PORT, function() {
   console.log('Server has started');
 });
