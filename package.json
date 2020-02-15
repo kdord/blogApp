@@ -25,6 +25,6 @@
     "simple-node-logger": "^18.12.23"
   },
   "devDependencies": {
-    "mongoose": "^5.7.1"
+    "mongoose": "^5.7.5"
   }
 }
